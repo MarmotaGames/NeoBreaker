@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/tower.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/parede.tscn" type="PackedScene" id=3]
+[ext_resource path="res://karmatic.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+
+font_path = "res://karmatic.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 20
+use_mipmaps = false
+use_filter = true
+font_data = SubResource( 1 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="main" type="YSort"]
+
+scale = Vector2( 2, 2 )
+sort_enabled = true
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="canhao" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 112, 300 )
+
+[node name="ParedeEsquerda" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -0.854507, -0.40863 )
+collision_mask = 3
+
+[node name="ParedeDireita" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 243, -65.7708 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="ParedeTeto" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 664.412, -1.16339 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="ParedeChao" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 818.54, 345 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="LabelScore" type="Label" parent="." index="5"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 245.0
+margin_bottom = 59.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Rect", "Visibility", "custom_fonts" ]
+
+[node name="LabelHighscore" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 101.0
+margin_top = 1.0
+margin_right = 347.0
+margin_bottom = 63.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+

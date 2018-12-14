@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/sceneManager.gd" type="Script" id=1]
+[ext_resource path="res://scenes/main.tscn" type="PackedScene" id=2]
+[ext_resource path="res://images/TITLE.png" type="Texture" id=3]
+[ext_resource path="res://scripts/newGameButton.gd" type="Script" id=4]
+[ext_resource path="res://scripts/exitButton.gd" type="Script" id=5]
+
+[node name="sceneManager" type="Node"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause", "Transform" ]
+
+[node name="main" parent="." index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Sort", "Transform" ]
+
+[node name="TitleSprite" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+centered = false
+region_rect = Rect2( 0, 0, 600, 650 )
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="NewGame" type="Button" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 94.0
+margin_top = 140.0
+margin_right = 357.0
+margin_bottom = 202.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+script = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Exit" type="Button" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 90.0
+margin_top = 217.0
+margin_right = 219.0
+margin_bottom = 260.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+script = ExtResource( 5 )
+_sections_unfolded = [ "Visibility" ]
+
+[connection signal="pressed" from="NewGame" to="NewGame" method="_on_NewGame_pressed"]
+
+[connection signal="pressed" from="Exit" to="Exit" method="_on_Exit_pressed"]
+
+

@@ -1,0 +1,181 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/gameOver.gd" type="Script" id=1]
+[ext_resource path="res://HELR45W.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/retryButton.gd" type="Script" id=3]
+[ext_resource path="res://scripts/menuButton.gd" type="Script" id=4]
+[ext_resource path="res://images/GAMEOVER.png" type="Texture" id=5]
+[ext_resource path="res://images/GAMEOVER_balao.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFontData" id=2]
+
+font_path = "res://karmatic.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 31
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFontData" id=4]
+
+font_path = "res://karmatic.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 31
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="GameOver" type="Node"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause", "Transform" ]
+
+[node name="Retry Button" type="Button" parent="." index="0"]
+
+modulate = Color( 0.875, 0.0512695, 0.0512695, 1 )
+self_modulate = Color( 0.90625, 0, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 156.75
+margin_top = 397.5
+margin_right = 377.75
+margin_bottom = 493.5
+rect_scale = Vector2( 0.75, 0.75 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 0.601562, 0.145691, 0.145691, 1 )
+custom_colors/font_color_hover = Color( 0.671875, 0.220459, 0.220459, 1 )
+custom_colors/font_color_pressed = Color( 0.597656, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "RETRY"
+flat = false
+align = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="MenuButton" type="Button" parent="." index="1"]
+
+modulate = Color( 0.875, 0.0512695, 0.0512695, 1 )
+self_modulate = Color( 0.90625, 0, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 155.25
+margin_top = 475.5
+margin_right = 375.25
+margin_bottom = 566.5
+rect_scale = Vector2( 0.75, 0.75 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 0.601562, 0.145691, 0.145691, 1 )
+custom_colors/font_color_hover = Color( 0.671875, 0.220459, 0.220459, 1 )
+custom_colors/font_color_pressed = Color( 0.597656, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+script = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="GameOverSprite" type="Sprite" parent="." index="2"]
+
+position = Vector2( 0, -0.0759945 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 5 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="LabelScore" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 198.75
+margin_top = 140.25
+margin_right = 282.0
+margin_bottom = 182.75
+rect_scale = Vector2( 0.75, 0.75 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="LabelHighScore" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 198.75
+margin_top = 182.25
+margin_right = 319.75
+margin_bottom = 218.25
+rect_scale = Vector2( 0.75, 0.75 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="newRecordSprite" type="Sprite" parent="." index="5"]
+
+position = Vector2( 236.178, 319.688 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="pressed" from="Retry Button" to="Retry Button" method="_on_Button_pressed"]
+
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_MenuButton_pressed"]
+
+
